@@ -25,11 +25,9 @@ header {
 .navbar {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: baseline;
-    gap: 50vw;
-
-    padding-top: 1.4rem;
+    padding: 1.4% 12%;
 }
 
 .navbar__logo {
@@ -48,6 +46,15 @@ header {
 .navbar__links {
     color: antiquewhite;
     text-decoration: none;
+}
+
+.CTA {
+    background-color: var(--primary-background);
+    padding: 1.1rem 2.4rem;
+    border-radius: 15px;
+    font-size: 1.3em;
+    text-decoration: none;
+
 }
 /* ---------------------------------------------------- */
 
@@ -78,13 +85,14 @@ header {
 .hero__text h1 {
     position: absolute;
     bottom: 30%;
+    left: 15%;
     z-index: 6;
     
     font-size: 7em;
     transform: translate(0, 200%);
     
     writing-mode: vertical-rl;
-    text-orientation: mixed;
+    text-orientation: upright;
 
     opacity: 0;
     animation: slide_right 300ms ease-out 300ms 1 forwards;
@@ -132,7 +140,7 @@ header {
     overflow: hidden;
 
     transition: 0.2s;
-    filter: brightness(0.1);
+    filter: brightness(0.05);
 }
 
 .card img {
@@ -187,16 +195,6 @@ footer {
     flex-wrap: nowrap;
     justify-content: space-between;
     text-align: center;
-    font-size: 18px;
-    margin-block-start: auto;
-}
-
-.copyright {
-    margin-left: 25%;
-}
-
-.psyzane {
-    margin-right: 25%;
 }
 
 /* Mobile media query */
