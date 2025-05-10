@@ -4,6 +4,9 @@
     --primary-color: #2bb6ec;
     --hero-gradient: linear-gradient(90deg, rgba(12, 177, 242, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(240, 219, 31, 1) 100%);
     --primary-background: #0cb1f2;
+
+    --min-card-size: 150px;
+    --menu-width: calc((var(--min-card-size)* 8)+22vw);
 }
 
 * {
@@ -49,7 +52,7 @@ header {
 }
 
 .CTA {
-    background-color: var(--primary-background);
+    background-color: env(--menu-width);
     padding: 1.1rem 2.4rem;
     border-radius: 15px;
     font-size: 1.3em;
@@ -101,24 +104,24 @@ header {
 
 /* CARD CAROSEL */
 .menu {
-    padding-block: 10px;
-    padding-inline: 50px;
+    padding: 2em 10em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 50vh;
 }
 
 .menu__title {
-    font-size: 10rem;
-    text-align: center;
-    margin-bottom: 10px;
-
+    font-size: 6rem;
     transition: 0.1s;
-}.menu__title h1:hover {
+}.menu__title:hover {
     scale: 1.03;
     transform: translateY(-3px);
 }
 
 .gallery {
-    background-color: azure;
-
+    padding: 3rem 0em;
     transform-style: preserve-3d;
     transform: perspective(1000px);
 
@@ -127,16 +130,15 @@ header {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    width: 88vw;
+    /* overflow: scroll; */
 }
 
 .card {
-    
-    flex-shrink: 1;
     background-color: #0cb1f2;
-    border-width: 2px;
-    border-color: black;
     aspect-ratio: 3/4;
-    height: 20rem;
+    min-width: var(--min-card-size);
+    max-width: calc(88vw/8);
     overflow: hidden;
 
     transition: 0.2s;
@@ -149,33 +151,15 @@ header {
     aspect-ratio: 3/4;
 }
 
-.card:hover {
-    filter: brightness(1);
-    transform: translateZ(200px);
-}
-.card:hover + *{
-    filter: brightness(0.8);
-    transform: translateZ(150px) rotateY(30deg);
-}
-.card:hover + * + *{
-    filter: brightness(0.6);
-    transform: translateZ(100px) rotateY(20deg);
-}
-.card:hover + * + * + *{
-    filter: brightness(0.4);
-    transform: translateZ(50px) rotateY(10deg);
-}
-.card:has(+ *:hover){
-    filter: brightness(0.8);
-    transform: translateZ(150px) rotateY(-30deg);
-}
-.card:has(+ * + *:hover){
-    filter: brightness(0.6);
-    transform: translateZ(100px) rotateY(-20deg);
-}
-.card:has(+ * + * + *:hover){
-    filter: brightness(0.4);
-    transform: translateZ(50px) rotateY(-10deg);
+
+.menu__btn {
+    background-color: burlywood;
+    padding: 1.4em 2.2em;
+    font-size: 2em;
+    text-decoration: none;
+    color: white;
+    align-self: center;
+
 }
 /* ------------------------------------------- */
 
@@ -195,6 +179,43 @@ footer {
     flex-wrap: nowrap;
     justify-content: space-between;
     text-align: center;
+    padding: 5px 15%;
+}
+
+.copyright, .psyzane {
+    font-size: 1.6em;
+}
+
+/* MENU media query */
+@media screen and (min-width: 770px) {
+    .card:hover {
+        filter: brightness(1);
+        transform: translateZ(200px);
+    }
+    .card:hover + *{
+        filter: brightness(0.8);
+        transform: translateZ(150px) rotateY(30deg);
+    }
+    .card:hover + * + *{
+        filter: brightness(0.6);
+        transform: translateZ(100px) rotateY(20deg);
+    }
+    .card:hover + * + * + *{
+        filter: brightness(0.4);
+        transform: translateZ(50px) rotateY(10deg);
+    }
+    .card:has(+ *:hover){
+        filter: brightness(0.8);
+        transform: translateZ(150px) rotateY(-30deg);
+    }
+    .card:has(+ * + *:hover){
+        filter: brightness(0.6);
+        transform: translateZ(100px) rotateY(-20deg);
+    }
+    .card:has(+ * + * + *:hover){
+        filter: brightness(0.4);
+        transform: translateZ(50px) rotateY(-10deg);
+    }
 }
 
 /* Mobile media query */
