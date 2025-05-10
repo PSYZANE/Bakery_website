@@ -66,7 +66,7 @@ header {
     transform-origin: center;
 
     opacity: 0;
-    animation: hero-slide_up 300ms ease-out 1s 1 forwards;
+    animation: hero-slide_up 400ms ease-out 100ms 1 forwards;
     width: clamp(300px, 70%, 30rem);
 }
  
@@ -87,7 +87,7 @@ header {
     text-orientation: mixed;
 
     opacity: 0;
-    animation: slide_right 200ms ease-out 2s 1 forwards;
+    animation: slide_right 300ms ease-out 300ms 1 forwards;
 }
 /* ------------------------------------------------ */
 
