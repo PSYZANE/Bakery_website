@@ -19,6 +19,7 @@ body{
 header {
     background: var(--primary-background);
     background: var(--hero-gradient);
+    width: 100vw;
 }
 
 .navbar {
@@ -48,7 +49,7 @@ header {
     color: antiquewhite;
     text-decoration: none;
 }
-
+/* ---------------------------------------------------- */
 
 /* HERO SECTION */
 .hero {
@@ -79,7 +80,7 @@ header {
     bottom: 30%;
     z-index: 6;
     
-    font-size: 7rem;
+    font-size: 7em;
     transform: translate(0, 200%);
     
     writing-mode: vertical-rl;
@@ -88,11 +89,12 @@ header {
     opacity: 0;
     animation: slide_right 200ms ease-out 2s 1 forwards;
 }
+/* ------------------------------------------------ */
 
 /* CARD CAROSEL */
-
 .menu {
-    height: 700px;
+    padding-block: 10px;
+    padding-inline: 50px;
 }
 
 .menu__title {
@@ -100,7 +102,7 @@ header {
     text-align: center;
     margin-bottom: 10px;
 
-    transition: 0.2s;
+    transition: 0.1s;
 }.menu__title h1:hover {
     scale: 1.03;
     transform: translateY(-3px);
@@ -114,21 +116,31 @@ header {
 
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
 }
 
 .card {
+    
+    flex-shrink: 1;
     background-color: #0cb1f2;
     border-width: 2px;
     border-color: black;
-    height: 300px;
-    width: 200px;
+    aspect-ratio: 3/4;
+    height: 20rem;
+    overflow: hidden;
 
     transition: 0.2s;
     filter: brightness(0.1);
 }
+
+.card img {
+    max-height: 100%;
+    min-width: 100%;
+    aspect-ratio: 3/4;
+}
+
 .card:hover {
     filter: brightness(1);
     transform: translateZ(200px);
@@ -157,12 +169,14 @@ header {
     filter: brightness(0.4);
     transform: translateZ(50px) rotateY(-10deg);
 }
+/* ------------------------------------------- */
 
 /* CONTACT */
 .contact {
     height: 80svh;
+    background-color: var(--primary-background);
 }
-
+/* -------------------------------------------- */
 
 
 /* FOOTER */
@@ -172,7 +186,7 @@ footer {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    text-align: start;
+    text-align: center;
     font-size: 18px;
     margin-block-start: auto;
 }
@@ -196,15 +210,15 @@ footer {
     }
 
     .hero__text h1{
-        font-size: 5rem;
+        font-size: 5em;
         padding-top: 3rem;
         padding-left: 1.8rem;
     }
 
     .copyright {
-        margin-left: 15%;
+        margin-left: 5%;
     }
     .psyzane {
-        margin-right: 15%;
+        margin-right: 5%;
     }
 }
