@@ -5,6 +5,8 @@
     --hero-gradient: linear-gradient(90deg, rgba(12, 177, 242, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(240, 219, 31, 1) 100%);
     --primary-background: #0cb1f2;
 
+    --button-color:burlywood;
+
     --min-card-size: 150px;
     --menu-width: calc((var(--min-card-size)* 8)+22vw);
 }
@@ -30,7 +32,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding: 1.4% 12%;
+    padding: 1.4% 12vh;
 }
 
 .navbar__logo {
@@ -52,9 +54,9 @@ header {
 }
 
 .CTA {
-    background-color: env(--menu-width);
-    padding: 1.1rem 2.4rem;
-    border-radius: 15px;
+    background-color: var(--button-color);
+    padding: 1.2rem 2.4rem;
+    border-radius: 25px 0pc;
     font-size: 1.3em;
     text-decoration: none;
 
@@ -159,7 +161,7 @@ header {
     text-decoration: none;
     color: white;
     align-self: center;
-
+    border-radius: 25px 0px;
 }
 /* ------------------------------------------- */
 
